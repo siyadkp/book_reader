@@ -37,6 +37,6 @@ This project is licensed under the XYZ License. See [LICENSE.md](LICENSE.md) for
 
 - Your Name
 - Your Email
-- GitHub: [Your GitHub Profile](https://github.com/yourusername)
+- GitHub: [Your GitHub Profile](https://github.com/siyadkp)
 
 Feel free to reach out with any questions or feedback.
