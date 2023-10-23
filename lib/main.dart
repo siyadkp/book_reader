@@ -1,8 +1,6 @@
 import 'package:book_reader/controller/api/api_calling.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_instance/get_instance.dart';
 import 'view/home/screen_home.dart';
 import 'package:sizer/sizer.dart';
 

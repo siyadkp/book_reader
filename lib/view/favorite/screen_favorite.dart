@@ -1,10 +1,7 @@
-import 'dart:ffi';
 import 'package:book_reader/controller/book_view_notifier/favoriteNotifier.dart';
 import 'package:book_reader/widgets/book_model_widget/book_model_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../controller/api/api_calling.dart';
-import '../../widgets/list_view_builder/list_view_builder.dart';
 
 class ScreenFavorite extends StatelessWidget {
   ScreenFavorite({super.key});
@@ -13,7 +10,7 @@ class ScreenFavorite extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Map data = favoriteController.favoriteData;
-    List keysOfFavoriteData=favoriteController.keysOfFavoriteData;
+    List keysOfFavoriteData = favoriteController.keysOfFavoriteData;
 
     return Scaffold(
         appBar: AppBar(
