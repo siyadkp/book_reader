@@ -1,10 +1,9 @@
-import 'package:book_reader/model/volumeInfo_model/volumeInfo_model.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-class BookModelWidget extends StatelessWidget {
-  const BookModelWidget({super.key, required this.item});
-  final VolumeInfo item;
+class FavotiteBookModelWidget extends StatelessWidget {
+  const FavotiteBookModelWidget({super.key, required this.item});
+  final Map item;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +17,7 @@ class BookModelWidget extends StatelessWidget {
             child: Container(
               width: 10.h,
               color: Colors.grey,
-              child: Image.network(item.imageLinks.smallThumbnail),
+              child: Image.network(item["imageLinks"]["smallThumbnail"]),
             ),
           ),
           Column(
@@ -28,23 +27,23 @@ class BookModelWidget extends StatelessWidget {
               SizedBox(
                 width: 73.w,
                 child: Text(
-                  item.title,
+                  item["title"],
                   style: const TextStyle(
                       fontSize: 20, fontWeight: FontWeight.bold),
                 ),
               ),
               Text(
-                item.authors.first,
+                item["authors"].first,
                 style:
                     const TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
               ),
               Text(
-                item.publisher,
+                item["publisher"],
                 style:
                     const TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
               ),
-              Text(
-                item.categories.first,
+              const Text(
+                'Publisher',
                 style: TextStyle(fontSize: 13, fontWeight: FontWeight.w500),
               ),
             ],

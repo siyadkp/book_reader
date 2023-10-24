@@ -1,10 +1,11 @@
 import 'dart:convert';
+import 'package:book_reader/model/volumeInfo_model/volumeInfo_model.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class FavoriteController extends GetxController {
-  final key = 'favorite_data';
-  Map<String, Map> favoriteData = {};
+  final key = 'favorite_datas';
+  Map<String, dynamic> favoriteData = {};
   List keysOfFavoriteData = [];
 
 //This function finding favorite books
@@ -19,8 +20,8 @@ class FavoriteController extends GetxController {
 
 // This function add datas to local storage with help of SharedPreferences
 
-  Future addToFavorite(Map data) async {
-    favoriteData.putIfAbsent(data['title'], () => data);
+  Future addToFavorite(VolumeInfo item) async {
+    favoriteData.putIfAbsent(item.title, () => item);
     final jsonModel = json.encode(favoriteData);
     final prefs = await SharedPreferences.getInstance();
     prefs.setString(key, jsonModel);
@@ -37,12 +38,13 @@ class FavoriteController extends GetxController {
       final mapData = json.decode(jsonData);
       favoriteData.clear();
       keysOfFavoriteData.clear();
-      favoriteData = Map<String, Map>.from(mapData);
+      favoriteData = Map<String, dynamic>.from(mapData);
       print(favoriteData);
     } else {
       return {}; // Return an empty map or handle the case where the data is not found
     }
     keysOfFavoriteData.addAll(favoriteData.keys);
+    print(favoriteData[keysOfFavoriteData[0]]['title']);
     update();
   }
 }

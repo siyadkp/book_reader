@@ -17,7 +17,7 @@ class ScreenHome extends StatelessWidget {
           ScreenFavorite(),
         ),
       ),
-      body: ListViewSeparatedWidget(data: bookReaderApi),
+      body: ListViewSeparatedWidget(items: bookReaderApi.items!),
     );
   }
 }

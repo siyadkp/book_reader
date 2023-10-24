@@ -1,5 +1,5 @@
 import 'package:book_reader/controller/book_view_notifier/favoriteNotifier.dart';
-import 'package:book_reader/widgets/book_model_widget/book_model_widget.dart';
+import 'package:book_reader/widgets/favorite_book_model_widget.dart/favorite_book_model_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,24 +9,25 @@ class ScreenFavorite extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Map data = favoriteController.favoriteData;
+    final Map<String, dynamic> favoriteDatas = favoriteController.favoriteData;
     List keysOfFavoriteData = favoriteController.keysOfFavoriteData;
 
     return Scaffold(
         appBar: AppBar(
           title: const Text('Favorite'),
         ),
-        body: data.isEmpty
+        body: favoriteDatas.isEmpty
             ? const Center(
                 child: Text(
-                'No Favorites',
-                style: TextStyle(fontSize: 15),
-              ))
+                  'No Favorites',
+                  style: TextStyle(fontSize: 15),
+                ),
+              )
             : ListView.separated(
-                itemBuilder: (context, index) =>
-                    BookModelWidget(data: data[keysOfFavoriteData[index]]),
+                itemBuilder: (context, index) => FavotiteBookModelWidget(
+                    item: favoriteDatas[keysOfFavoriteData[index]]),
                 separatorBuilder: (context, index) =>
                     const SizedBox(height: 10),
-                itemCount: data.length));
+                itemCount: favoriteDatas.length));
   }
 }
