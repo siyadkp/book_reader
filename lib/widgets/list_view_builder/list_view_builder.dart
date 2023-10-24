@@ -22,7 +22,7 @@ class ListViewSeparatedWidget extends StatelessWidget {
         child: BookModelWidget(item: items[index].volumeInfo),
       ),
       separatorBuilder: (context, index) => const SizedBox(height: 10),
-      itemCount: 10,
+      itemCount: items.length,
     );
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
-import '../../controller/book_view_notifier/favoriteNotifier.dart';
+import '../../controller/favorite_controller/favorite_controller.dart';
 import '../../model/volumeInfo_model/volumeInfo_model.dart';
 import '../../widgets/appbar_widget/appbar_widget.dart';
 

@@ -1,4 +1,4 @@
-import 'package:book_reader/controller/book_view_notifier/favoriteNotifier.dart';
+import 'package:book_reader/controller/favorite_controller/favorite_controller.dart';
 import 'package:book_reader/widgets/favorite_book_model_widget.dart/favorite_book_model_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

@@ -1,5 +1,5 @@
 import 'package:book_reader/controller/api/api_calling.dart';
-import 'package:book_reader/controller/book_view_notifier/favoriteNotifier.dart';
+import 'package:book_reader/controller/favorite_controller/favorite_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'view/home/screen_home.dart';
